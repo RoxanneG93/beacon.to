@@ -1,0 +1,8 @@
+{
+  "name": "beacon.to",
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "ionic-angular",
+  "pro_id": "b38263e0"
+}
