@@ -61,21 +61,20 @@
       "cordova-plugin-geolocation": {
         "GEOLOCATION_USAGE_DESCRIPTION": "To track your walks"
       }
-    }
-      "cordova-plugin-camera": {},
-      "cordova-plugin-camera-preview": {},
-      "cordova-plugin-whitelist": {},
-      "cordova-plugin-statusbar": {},
-      "cordova-plugin-device": {},
-      "cordova-plugin-splashscreen": {},
-      "cordova-plugin-ionic-webview": {
-        "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
-      },
-      "cordova-plugin-ionic-keyboard": {}
     },
-    "platforms": [
-      "android",
-      "ios"
-    ]
-  }
+    "cordova-plugin-camera": {},
+    "cordova-plugin-camera-preview": {},
+    "cordova-plugin-whitelist": {},
+    "cordova-plugin-statusbar": {},
+    "cordova-plugin-device": {},
+    "cordova-plugin-splashscreen": {},
+    "cordova-plugin-ionic-webview": {
+      "ANDROID_SUPPORT_ANNOTATIONS_VERSION": "27.+"
+    },
+    "cordova-plugin-ionic-keyboard": {}
+  },
+  "platforms": [
+    "android",
+    "ios"
+  ]
 }
