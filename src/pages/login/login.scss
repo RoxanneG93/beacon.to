@@ -1,0 +1,74 @@
+@import url('https://fonts.googleapis.com/css?family=Roboto');
+
+body {
+  background: url('https://images.unsplash.com/photo-1482059470115-0aadd6bf6834?ixlib=rb-0.3.5&ixid=eyJhcHBfaWQiOjEyMDd9&s=267bba9a4e280ec64388fe8fb01e9d1b&auto=format&fit=crop&w=1500&q=80') no-repeat transparent;
+  margin: 0px;
+  font-family: 'Roboto', sans-serif;
+  background-size: 100% 110%;
+}
+
+h1,
+h3,
+a {
+  margin: 0;
+  padding: 0;
+  font-family: 'Roboto', sans-serif;
+}
+
+.login {
+  margin: 0 auto;
+  max-width: 500px;
+}
+
+.login-header {
+  color: #fff;
+  text-align: center;
+  font-size: 300%;
+  margin-top: 5;
+}
+
+.login-form {
+  border: .5px solid #fff;
+  background: #bf5700;
+  border-radius: 10px;
+  box-shadow: 0px 0px 10px #000;
+}
+
+.login-form h3 {
+  text-align: left;
+  margin-left: 40px;
+  color: #fff;
+}
+
+.login-form {
+  box-sizing: border-box;
+  padding-top: 15px;
+  padding-bottom: 10%;
+  margin: 5% auto;
+  text-align: center;
+}
+
+.login input[type="text"],
+.login input[type="password"] {
+  max-width: 400px;
+  width: 80%;
+  line-height: 3em;
+  font-family: 'Ubuntu', sans-serif;
+  margin: 1em 2em;
+  border-radius: 5px;
+  border: 2px solid #f2f2f2;
+  outline: none;
+  padding-left: 10px;
+}
+
+.login-form input[type="button"] {
+  height: 30px;
+  width: 100px;
+  background: #fff;
+  border: 1px solid #f2f2f2;
+  border-radius: 20px;
+  color: slategrey;
+  text-transform: uppercase;
+  font-family: 'Ubuntu', sans-serif;
+  cursor: pointer;
+}
