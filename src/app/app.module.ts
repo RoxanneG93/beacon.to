@@ -10,6 +10,7 @@ import { AngularFireAuthModule } from 'angularfire2/auth';
 import { AboutPage } from '../pages/about/about';
 import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
+import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
 
 import { StatusBar } from '@ionic-native/status-bar';
@@ -39,6 +40,7 @@ export const firebaseConfig = {
     AboutPage,
     ContactPage,
     HomePage,
+    LoginPage,
     TabsPage
   ],
   imports: [
@@ -56,6 +58,7 @@ export const firebaseConfig = {
     MyApp,
     AboutPage,
     ContactPage,
+    LoginPage,
     HomePage,
     TabsPage
   ],
