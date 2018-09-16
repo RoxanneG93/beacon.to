@@ -26,7 +26,7 @@ import { HttpClientModule } from '@angular/common/http';
 import { CameraPreview } from '@ionic-native/camera-preview';
 
 
-// importing GEO plugins
+// importing GEO plugins!!!
 import { Geolocation } from '@ionic-native/geolocation';
 import { IonicStorageModule } from '@ionic/storage';
 
