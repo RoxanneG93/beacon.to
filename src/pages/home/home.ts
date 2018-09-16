@@ -1,6 +1,7 @@
 import { Component } from "@angular/core";
 import { NavController } from "ionic-angular";
 import { Camera, CameraOptions } from "@ionic-native/camera";
+import { UploadPage } from '../upload/upload';
 import { AuthProvider } from "../../providers/auth/auth";
 import {
   CameraPreview,
@@ -52,7 +53,13 @@ export class HomePage {
         }
       );
   }
+
+    // Routing Method
+    routeToPostForm(){
+      this.navCtrl.push(UploadPage);
+    }
 }
+
 
 // const options: CameraOptions = {
 //   quality: 100,
