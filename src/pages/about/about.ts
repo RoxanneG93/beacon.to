@@ -13,6 +13,7 @@ declare var google;
   templateUrl: 'about.html'
 })
 export class AboutPage {
+  // this is getting ElementRef object
   @ViewChild('map') mapElement: ElementRef;
 
   map: any;
@@ -29,6 +30,8 @@ export class AboutPage {
 
 
   ionViewDidLoad() {
+    // this shows the ElementRef -- we are looking for the nativeElement property
+    console.log(this.mapElement);
     this.plt.ready().then(() => {
       // need to find this method
       this.loadHistoricRoutes();
@@ -40,6 +43,7 @@ export class AboutPage {
         streetViewControl: false,
         fullscreenControl: false
       }
+      // this is where we target the nativeElement (#div in our html) and set the mapOptions above
       this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
  
       this.geolocation.getCurrentPosition().then(pos => {
@@ -59,39 +63,39 @@ export class AboutPage {
     })
   }
 
-  // startTracking() {
-  //   this.isTracking = true;
-  //   this.trackedRoute = [];
+  startTracking() {
+    this.isTracking = true;
+    this.trackedRoute = [];
  
-  //   this.positionSubscription = this.geolocation.watchPosition()
-  //     .pipe(
-  //       filter((p) => p.coords !== undefined) //Filter Out Errors
-  //     )
-  //     .subscribe(data => {
-  //       setTimeout(() => {
-  //         this.trackedRoute.push({ lat: data.coords.latitude, lng: data.coords.longitude });
-  //         this.redrawPath(this.trackedRoute);
-  //       }, 0);
-  //     });
+    this.positionSubscription = this.geolocation.watchPosition()
+      .pipe(
+        filter((p) => p.coords !== undefined) //Filter Out Errors
+      )
+      .subscribe(data => {
+        setTimeout(() => {
+          this.trackedRoute.push({ lat: data.coords.latitude, lng: data.coords.longitude });
+          this.redrawPath(this.trackedRoute);
+        }, 0);
+      });
  
-  // }
+  }
  
-  // redrawPath(path) {
-  //   if (this.currentMapTrack) {
-  //     this.currentMapTrack.setMap(null);
-  //   }
+  redrawPath(path) {
+    if (this.currentMapTrack) {
+      this.currentMapTrack.setMap(null);
+    }
  
-  //   if (path.length > 1) {
-  //     this.currentMapTrack = new google.maps.Polyline({
-  //       path: path,
-  //       geodesic: true,
-  //       strokeColor: '#ff00ff',
-  //       strokeOpacity: 1.0,
-  //       strokeWeight: 3
-  //     });
-  //     this.currentMapTrack.setMap(this.map);
-  //   }
-  // }
+    if (path.length > 1) {
+      this.currentMapTrack = new google.maps.Polyline({
+        path: path,
+        geodesic: true,
+        strokeColor: '#ff00ff',
+        strokeOpacity: 1.0,
+        strokeWeight: 3
+      });
+      this.currentMapTrack.setMap(this.map);
+    }
+  }
 
 }
 
