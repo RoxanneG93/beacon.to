@@ -12,8 +12,44 @@
 
 </ion-header>
 
+<ion-content>
 
-<ion-content padding>
+    <ion-list>
+
+      <ion-item>
+        <ion-label floating>Title</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+
+      <ion-item>
+        <ion-label floating>Caption</ion-label>
+        <ion-input type="text" value=""></ion-input>
+      </ion-item>
+      <!-- other -->
+      <ion-list>
+          <ion-item>
+            <ion-label>Category</ion-label>
+            <ion-select [(ngModel)]="toppings" multiple="true" cancelText="Nah" okText="Okay!">
+              <ion-option value="bacon" >Food</ion-option>
+              <ion-option value="olives">Drinks</ion-option>
+              <ion-option value="xcheese">Shopping</ion-option>
+              <ion-option value="peppers">Fun</ion-option>
+              <ion-option value="mushrooms">Free</ion-option>
+              <ion-option value="onions">Pets</ion-option>
+              <ion-option value="pepperoni">Education</ion-option>
+            </ion-select>
+          </ion-item>
+        </ion-list>
+    </ion-list>
+
+    <div padding>
+      <button ion-button color="primary" block>Post</button>
+    </div>
+
+</ion-content>
+
+
+<!-- <ion-content padding>
   <h1>This is the upload Page!</h1>
     <ion-card>
         <ion-card-content>
@@ -25,4 +61,4 @@
       
   
 
-</ion-content>
+</ion-content> -->
