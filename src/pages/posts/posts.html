@@ -14,32 +14,37 @@
 
 
 <ion-content padding>
-  <div class="list card">
-      <div class="item">
-        <h1 class="text-center">Live Posts</h1>
-        <button class="btn btn-primary">Location would go here</button>
-        <p>Date: Sept 16th, 2018</p>
-      </div>
-      <div class="item item-body">
-        <img src="https://austinaeronauts.com/wp-content/uploads/FullSizeRender.jpg" alt="" class="user-image">
-      
-          <div class="item tabs tabs-secondary tabs-icon-left">
-            <a class="tab-item" href="#">
-              <i class="icon ion-chatbox"></i> Comment
-            </a>
-            <a class="tab-item" href="#">
-              <i class="icon ion-share"></i> Share
-            </a>
-          </div>            
-        </div>
-        <div class="caption-wrapper">
-          <p class="user-caption">
-            Lorem ipsum dolor, sit amet consectetur adipisicing elit. 
-            Assumenda esse nihil deleniti alias quia voluptates accusantium quod quidem laudantium debitis atque reiciendis dignissimos laborum rerum, delectus eveniet commodi unde eligendi?
-          </p>
-        </div>
-      </div>
 
+  <ion-card *ngFor="let items of cardItems">
+    <img src="http://www.hotel-r.net/im/hotel/us/the-driskill-12.jpg" alt="">
+    <ion-fab right top>
+      <button ion-fab>
+        <ion-icon name="pin"></ion-icon>
+      </button>
+    </ion-fab>
+  
+    <ion-item>
+      <ion-icon name="football" item-start large></ion-icon>
+      <h2>{{items.title}}</h2>
+      <p>11 N. Way St, Madison, WI 53703</p>
+    </ion-item>
+  
+    <ion-item>
+      <ion-icon name="wine" item-start large ></ion-icon>
+      <h2>Institute of Fine Cocktails</h2>
+      <p>14 S. Hop Avenue, Madison, WI 53703</p>
+    </ion-item>
+  
+    <ion-item>
+      <span item-start>18 min</span>
+      <span item-start>(2.6 mi)</span>
+      <button ion-button icon-start clear item-end>
+        <ion-icon name="navigate"></ion-icon>
+        Start
+      </button>
+    </ion-item>
+  
+  </ion-card>
 
 
 </ion-content>
