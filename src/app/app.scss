@@ -15,11 +15,13 @@
 // for the .md, .ios, or .wp mode classes. The mode class is
 // automatically applied to the <body> element in the app.
 .toolbar-background {
-    background-color: rgb(250, 76, 76);
+   background: linear-gradient(rgba(255,0,0,0.5), rgba(255,0,0,0.5)), url(http://www.f-covers.com/cover/cityscapes-new-york-city-facebook-cover-timeline-banner-for-fb.jpg);
   }
 
-.tabs-icon-top,
-.tabs-icon-top .tab,
-.tabs-icon-top .tab .nav-view-home {
-    color: #c49137;
-}
+  .toolbar-title {
+      color: white;
+  }
+
+  button {
+      color: white;
+  }

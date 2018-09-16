@@ -41,7 +41,9 @@ $colors: (
   dark:       #222
 );
 
-
+$tabs-background: rgb(252, 101, 101);
+$tabs-tab-color-active: color($colors, light);
+// $text-color: #fff;
 // App iOS Variables
 // --------------------------------------------------
 // iOS only Sass variables can go here
