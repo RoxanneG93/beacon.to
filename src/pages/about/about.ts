@@ -5,6 +5,8 @@ import { Subscription } from 'rxjs/Subscription';
 import { filter } from 'rxjs/operators';
 import { Storage } from '@ionic/storage';
 
+import { PostsPage } from '../posts/posts';
+
 
 declare var google;
 
@@ -46,12 +48,30 @@ export class AboutPage {
       this.geolocation.getCurrentPosition().then(pos => {
         let latLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
         this.map.setCenter(latLng);
+        this.map.addMarker(latLng);
         this.map.setZoom(16);
+        
       }).catch((error) => {
         console.log('Error getting location', error);
       });
     });
   }
+
+  // addMarker(posit, map){
+  //   return new google.maps.Marker({
+  //     position,
+  //     map
+  //   })
+
+  // }
+
+  // function to track previous tracks and setting the data to previousTracks variable
+  // loadHistoricRoutes(){
+  //   this.storage.get('routes').then(data => {
+  //     this.previousTracks = data;
+  //   })
+  // }
+
   startTracking() {
     this.isTracking = true;
     this.trackedRoute = [];
@@ -106,6 +126,12 @@ export class AboutPage {
 
   showHistoryRoute(route) {
     this.redrawPath(route);
+  }
+
+
+  // Routing Method
+  routeToPostView(){
+    this.navCtrl.push(PostsPage);
   }
 }
 

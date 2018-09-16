@@ -12,6 +12,11 @@ import { ContactPage } from '../pages/contact/contact';
 import { HomePage } from '../pages/home/home';
 import { LoginPage } from '../pages/login/login';
 import { TabsPage } from '../pages/tabs/tabs';
+// adding the additional pages - RG
+import { PostsPage } from '../pages/posts/posts';
+import { UploadPage } from '../pages/upload/upload';
+import { PostListPage } from '../pages/post-list/post-list';
+
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -19,6 +24,7 @@ import { Camera } from '@ionic-native/camera';
 import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { CameraPreview } from '@ionic-native/camera-preview';
+
 
 // importing GEO plugins
 import { Geolocation } from '@ionic-native/geolocation';
@@ -41,7 +47,10 @@ export const firebaseConfig = {
     ContactPage,
     HomePage,
     LoginPage,
-    TabsPage
+    TabsPage,
+    PostsPage,
+    UploadPage,
+    PostListPage
   ],
   imports: [
     BrowserModule,
@@ -60,7 +69,10 @@ export const firebaseConfig = {
     ContactPage,
     LoginPage,
     HomePage,
-    TabsPage
+    TabsPage,
+    PostsPage,
+    UploadPage,
+    PostListPage
   ],
   providers: [
     Camera,
