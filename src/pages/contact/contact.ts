@@ -12,3 +12,10 @@ export class ContactPage {
   }
 
 }
+
+
+
+@Component({
+  
+})
+export class BackgroundPage { }
