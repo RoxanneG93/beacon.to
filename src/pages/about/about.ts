@@ -1,14 +1,98 @@
-import { Component } from '@angular/core';
-import { NavController } from 'ionic-angular';
+import { Component, ViewChild, ElementRef } from '@angular/core';
+import { NavController , Platform} from 'ionic-angular';
+import { Geolocation } from '@ionic-native/geolocation';
+import { Subscription } from 'rxjs/Subscription';
+import { filter } from 'rxjs/operators';
+import { Storage } from '@ionic/storage';
+
+declare var google;
+
 
 @Component({
   selector: 'page-about',
   templateUrl: 'about.html'
 })
 export class AboutPage {
+  @ViewChild('map') mapElement: ElementRef;
 
-  constructor(public navCtrl: NavController) {
+  map: any;
+  currentMapTrack = null;
+ 
+  isTracking = false;
+  trackedRoute = [];
+  previousTracks = [];
+ 
+  positionSubscription: Subscription;
 
+ 
+  constructor(public navCtrl: NavController, private plt: Platform, private geolocation: Geolocation, private storage: Storage) { }
+
+
+  ionViewDidLoad() {
+    this.plt.ready().then(() => {
+      // need to find this method
+      this.loadHistoricRoutes();
+ 
+      let mapOptions = {
+        zoom: 13,
+        mapTypeId: google.maps.MapTypeId.ROADMAP,
+        mapTypeControl: false,
+        streetViewControl: false,
+        fullscreenControl: false
+      }
+      this.map = new google.maps.Map(this.mapElement.nativeElement, mapOptions);
+ 
+      this.geolocation.getCurrentPosition().then(pos => {
+        let latLng = new google.maps.LatLng(pos.coords.latitude, pos.coords.longitude);
+        this.map.setCenter(latLng);
+        this.map.setZoom(16);
+      }).catch((error) => {
+        console.log('Error getting location', error);
+      });
+    });
   }
 
+  // function to track previous tracks and setting the data to previousTracks variable
+  loadHistoricRoutes(){
+    this.storage.get('routes').then(data => {
+      this.previousTracks = data;
+    })
+  }
+
+  // startTracking() {
+  //   this.isTracking = true;
+  //   this.trackedRoute = [];
+ 
+  //   this.positionSubscription = this.geolocation.watchPosition()
+  //     .pipe(
+  //       filter((p) => p.coords !== undefined) //Filter Out Errors
+  //     )
+  //     .subscribe(data => {
+  //       setTimeout(() => {
+  //         this.trackedRoute.push({ lat: data.coords.latitude, lng: data.coords.longitude });
+  //         this.redrawPath(this.trackedRoute);
+  //       }, 0);
+  //     });
+ 
+  // }
+ 
+  // redrawPath(path) {
+  //   if (this.currentMapTrack) {
+  //     this.currentMapTrack.setMap(null);
+  //   }
+ 
+  //   if (path.length > 1) {
+  //     this.currentMapTrack = new google.maps.Polyline({
+  //       path: path,
+  //       geodesic: true,
+  //       strokeColor: '#ff00ff',
+  //       strokeOpacity: 1.0,
+  //       strokeWeight: 3
+  //     });
+  //     this.currentMapTrack.setMap(this.map);
+  //   }
+  // }
+
 }
+
+

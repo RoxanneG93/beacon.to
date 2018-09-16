@@ -19,6 +19,10 @@ import { AuthProvider } from '../providers/auth/auth';
 import { HttpClientModule } from '@angular/common/http';
 import { CameraPreview } from '@ionic-native/camera-preview';
 
+// importing GEO plugins
+import { Geolocation } from '@ionic-native/geolocation';
+import { IonicStorageModule } from '@ionic/storage';
+
 /** Firebase Config */
 export const firebaseConfig = {
     apiKey: "AIzaSyDxZ6x0efH_7uCWum1wNbxhCW2LaWFsWQY",
@@ -39,6 +43,7 @@ export const firebaseConfig = {
   ],
   imports: [
     BrowserModule,
+    IonicStorageModule.forRoot(),
     AngularFireModule.initializeApp(firebaseConfig),
     AngularFireDatabaseModule,
     AngularFireAuthModule,
@@ -59,6 +64,8 @@ export const firebaseConfig = {
     CameraPreview,
     StatusBar,
     SplashScreen,
+    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    Geolocation,
     {provide: ErrorHandler, useClass: IonicErrorHandler},
     AuthProvider
   ]
