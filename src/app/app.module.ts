@@ -32,12 +32,12 @@ import { IonicStorageModule } from '@ionic/storage';
 
 /** Firebase Config */
 export const firebaseConfig = {
-    apiKey: "AIzaSyDxZ6x0efH_7uCWum1wNbxhCW2LaWFsWQY",
-    authDomain: "beacon-to.firebaseapp.com",
-    databaseURL: "https://beacon-to.firebaseio.com",
-    projectId: "beacon-to",
-    storageBucket: "beacon-to.appspot.com",
-    messagingSenderId: "479494665670"
+  apiKey: "AIzaSyDxZ6x0efH_7uCWum1wNbxhCW2LaWFsWQY",
+  authDomain: "beacon-to.firebaseapp.com",
+  databaseURL: "https://beacon-to.firebaseio.com",
+  projectId: "beacon-to",
+  storageBucket: "beacon-to.appspot.com",
+  messagingSenderId: "479494665670"
 };
 
 @NgModule({
@@ -79,10 +79,10 @@ export const firebaseConfig = {
     CameraPreview,
     StatusBar,
     SplashScreen,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
-    Geolocation,
-    {provide: ErrorHandler, useClass: IonicErrorHandler},
+    { provide: ErrorHandler, useClass: IonicErrorHandler },
+    Geolocation
+    , { provide: ErrorHandler, useClass: IonicErrorHandler },
     AuthProvider
   ]
 })
-export class AppModule {}
+export class AppModule { }
