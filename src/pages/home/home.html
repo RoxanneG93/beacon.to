@@ -1,6 +1,10 @@
 <ion-header>
   <ion-navbar>
-    <ion-title>Home</ion-title>
+    <ion-title>
+      <div text-center>
+<img src="../../assets/imgs/bon-voyage_S_ALT.png">
+      </div>
+    </ion-title>
   </ion-navbar>
 </ion-header>
 <ion-content class="home">
@@ -10,5 +14,7 @@
       <img [src]="base64Image" *ngIf="base64Image" />
     </ion-card-content>
   </ion-card>
+  <div text-center>
   <button ion-button (click)="takePicture()">Take a Picture</button>
+  </div>
 </ion-content>
