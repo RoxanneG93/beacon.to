@@ -14,6 +14,15 @@
 
 
 <ion-content padding>
-  <h1>This is the upload page!</h1>
+  <h1>This is the upload Page!</h1>
+    <ion-card>
+        <ion-card-content>
+          Latest Picture:
+          <img [src]="base64Image" *ngIf="base64Image" />
+        </ion-card-content>
+      </ion-card>
+      <button ion-button (click)="takePicture()">Take a Picture</button>
+      
+  
 
 </ion-content>

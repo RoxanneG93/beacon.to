@@ -22,4 +22,8 @@ export class PostsPage {
     console.log('ionViewDidLoad PostsPage');
   }
 
+  routeToMapPage(){
+    
+  }
+
 }
